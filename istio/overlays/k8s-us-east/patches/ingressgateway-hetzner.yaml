@@ -13,7 +13,7 @@ metadata:
       [
         {
           "name": "Istio Ingress Check",
-          "url": "http://nginx.k8s.unreliable.cloud:15021",
+          "url": "http://istio-ingress.k8s.unreliable.cloud:15021",
           "timeout": 10,
           "http_response_status_code": "404"
         }

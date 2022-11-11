@@ -7,3 +7,14 @@ metadata:
     load-balancer.hetzner.cloud/ipv6-disabled: "true"
     load-balancer.hetzner.cloud/location: ash
     external-dns.alpha.kubernetes.io/hostname: istio-ingress.k8s.unreliable.cloud
+    ad.datadoghq.com/service.check_names: '["http_check"]'
+    ad.datadoghq.com/service.init_configs: '[{}]'
+    ad.datadoghq.com/service.instances: |-
+      [
+        {
+          "name": "Istio Ingress Check",
+          "url": "http://nginx.k8s.unreliable.cloud:15021",
+          "timeout": 10,
+          "http_response_status_code": "404"
+        }
+      ]

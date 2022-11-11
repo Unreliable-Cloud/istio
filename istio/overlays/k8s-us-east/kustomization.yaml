@@ -8,3 +8,7 @@ patches:
 - path: patches/ingressgateway-hetzner.yaml
   target:
     kind: Service
+- path: patches/istiod-resources.yaml
+  target:
+    kind: Deployment
+    name: istiod

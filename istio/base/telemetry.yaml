@@ -5,7 +5,9 @@ metadata:
   name: mesh-default
   namespace: istio-system
 spec:
+  selector:
+    matchLabels:
+      operator.istio.io/component: "IngressGateways"
   accessLogging:
     - providers:
       - name: envoy
-

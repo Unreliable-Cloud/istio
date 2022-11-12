@@ -12,3 +12,7 @@ patches:
   target:
     kind: Deployment
     name: istiod
+- path: patches/ingressgateway-resources.yaml
+  target:
+    kind: Deployment
+    name: istio-ingressgateway

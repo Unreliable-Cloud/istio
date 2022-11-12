@@ -2,7 +2,7 @@
 apiVersion: telemetry.istio.io/v1alpha1
 kind: Telemetry
 metadata:
-  name: mesh-default
+  name: access-logging-ingressgateway
   namespace: istio-system
 spec:
   selector:

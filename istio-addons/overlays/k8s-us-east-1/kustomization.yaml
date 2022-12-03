@@ -3,3 +3,12 @@ kind: Kustomization
 
 bases:
 - ../../base
+
+patches:
+- patch: |
+    - op: remove
+      path: /spec/template/spec/containers/0/ports/1
+  target:
+    kind: Deployment
+    name: grafana
+    namespace: istio-system

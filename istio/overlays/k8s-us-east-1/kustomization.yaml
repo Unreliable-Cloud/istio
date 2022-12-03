@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: istio-system
+
+resources:
+- ../../base
+
+patches:
+- path: patches/ingressgateway-hetzner.yaml
+  target:
+    kind: Service
+- path: patches/istiod-resources.yaml
+  target:
+    kind: Deployment
+    name: istiod
+- path: patches/ingressgateway-resources.yaml
+  target:
+    kind: Deployment
+    name: istio-ingressgateway

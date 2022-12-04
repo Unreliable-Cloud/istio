@@ -1,0 +1,7 @@
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: istio-validator-istio-system
+  annotations:
+    kustomize.toolkit.fluxcd.io/reconcile: disabled

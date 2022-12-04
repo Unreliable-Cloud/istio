@@ -7384,6 +7384,8 @@ metadata:
     release: istio
     istio: istiod
     istio.io/rev: default
+  annotations:
+    kustomize.toolkit.fluxcd.io/reconcile: disabled
 webhooks:
   # Webhook handling per-revision validation. Mostly here so we can determine whether webhooks
   # are rejecting invalid configs on a per-revision basis.

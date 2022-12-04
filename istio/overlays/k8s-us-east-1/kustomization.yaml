@@ -18,3 +18,7 @@ patches:
   target:
     kind: Deployment
     name: istio-ingressgateway
+- path: patches/istio-validating-webhook-annotation.yaml
+  target:
+    kind: ValidatingWebhookConfiguration
+    name: istio-validator-istio-system

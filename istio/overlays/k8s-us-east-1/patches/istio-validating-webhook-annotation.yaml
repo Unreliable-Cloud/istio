@@ -4,4 +4,4 @@ kind: ValidatingWebhookConfiguration
 metadata:
   name: istio-validator-istio-system
   annotations:
-    kustomize.toolkit.fluxcd.io/reconcile: enabled
+    kustomize.toolkit.fluxcd.io/reconcile: disabled

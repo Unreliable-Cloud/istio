@@ -4,6 +4,14 @@ kind: Kustomization
 bases:
 - ../../base
 
+images:
+- name: grafana/grafana
+  newName: docker.io/grafana/grafana
+- name: jimmidyson/configmap-reload
+  newName: docker.io/jimmidyson/configmap-reload
+- name: prom/prometheus
+  newName: docker.io/prom/prometheus
+
 patches:
 - patch: |
     - op: remove

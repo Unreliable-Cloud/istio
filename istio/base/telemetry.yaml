@@ -27,3 +27,19 @@ spec:
           value: "request.method"
         request_host:
           value: "request.host"
+---
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: prometheus-metrics
+  namespace: freshrss
+spec:
+  metrics:
+  - providers:
+    - name: prometheus
+    overrides:
+    - tagOverrides:
+        request_method:
+          value: "request.method"
+        request_host:
+          value: "request.host"

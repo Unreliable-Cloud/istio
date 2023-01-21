@@ -11,3 +11,19 @@ spec:
   accessLogging:
     - providers:
       - name: envoy
+---
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: prometheus-metrics
+  namespace: blog
+spec:
+  metrics:
+  - providers:
+    - name: prometheus
+    overrides:
+    - tagOverrides:
+        request_method:
+          value: "request.method"
+        request_host:
+          value: "request.host"

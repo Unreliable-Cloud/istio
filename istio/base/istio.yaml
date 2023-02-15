@@ -8759,7 +8759,7 @@ data:
     networks: {}
 
   mesh: |-
-    accessLogFormat: JSON
+    accessLogFormat: json
     defaultConfig:
       discoveryAddress: istiod.istio-system.svc:15012
       proxyMetadata: {}

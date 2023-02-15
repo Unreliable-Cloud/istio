@@ -11,4 +11,3 @@ spec:
   accessLogging:
     - providers:
       - name: envoy
-        accessLogEncoding: "JSON"

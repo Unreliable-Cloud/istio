@@ -8881,7 +8881,7 @@ data:
         "sts": {
           "servicePort": 0
         },
-        "tag": "1.17.0",
+        "tag": "1.17.2",
         "tracer": {
           "datadog": {
             "address": "$(HOST_IP):8126"
@@ -9457,7 +9457,7 @@ data:
           labels:
             service.istio.io/canonical-name: {{ index .ObjectMeta.Labels `service.istio.io/canonical-name` | default (index .ObjectMeta.Labels `app.kubernetes.io/name`) | default (index .ObjectMeta.Labels `app`) | default .DeploymentMeta.Name  | quote }}
             service.istio.io/canonical-revision: {{ index .ObjectMeta.Labels `service.istio.io/canonical-revision` | default (index .ObjectMeta.Labels `app.kubernetes.io/version`) | default (index .ObjectMeta.Labels `version`) | default "latest"  | quote }}
-            istio.io/rev: {{ .Revision | default "default" | quote }}
+            istio.io/rev: {{ index .ObjectMeta.Labels `istio.io/rev` | default .Revision | default "default" | quote }}
           annotations: {
             {{- if eq (len $containers) 1 }}
             kubectl.kubernetes.io/default-logs-container: "{{ index $containers 0 }}",
@@ -10247,7 +10247,7 @@ spec:
       serviceAccountName: istio-ingressgateway-service-account
       containers:
         - name: istio-proxy
-          image: "docker.io/istio/proxyv2:1.17.0"
+          image: "docker.io/istio/proxyv2:1.17.2"
           ports:
             - containerPort: 15021
               protocol: TCP
@@ -10454,7 +10454,7 @@ spec:
         fsGroup: 1337
       containers:
         - name: discovery
-          image: "docker.io/istio/pilot:1.17.0"
+          image: "docker.io/istio/pilot:1.17.2"
           args:
           - "discovery"
           - --monitoringAddr=:15014

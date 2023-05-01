@@ -10781,6 +10781,7 @@ metadata:
   name: istio-ingressgateway
   namespace: istio-system
   annotations:
+    load-balancer.hetzner.cloud/use-private-ip: "false"
   labels:
     app: istio-ingressgateway
     istio: ingressgateway

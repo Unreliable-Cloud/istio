@@ -5,6 +5,7 @@ metadata:
   name: istio-ingressgateway
   annotations:
     load-balancer.hetzner.cloud/ipv6-disabled: "true"
+    load-balancer.hetzner.cloud/use-private-ip: "false"
     load-balancer.hetzner.cloud/location: ash
     external-dns.alpha.kubernetes.io/hostname: istio-ingress.k8s.unreliable.cloud
     ad.datadoghq.com/service.check_names: '["http_check"]'

@@ -12,7 +12,7 @@ spec:
         ad.datadoghq.com/istio-proxy.instances: |
           [
             {
-              "openmetrics_endpoint": "http://%%host%%:15020/stats/prometheus"
+              "openmetrics_endpoint": "http://%%host%%:15020/metrics"
             }
           ]
         ad.datadoghq.com/istio-proxy.logs: '[{"source": "json", "service": "istio-ingressgateway"}]'

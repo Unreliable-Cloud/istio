@@ -5,6 +5,17 @@ metadata:
   name: istio-ingressgateway
 spec:
   template:
+    metadata:
+      annotations:
+        ad.datadoghq.com/istio-proxy.check_names: '["openmetrics"]'
+        ad.datadoghq.com/istio-proxy.init_configs: '[{}]'
+        ad.datadoghq.com/istio-proxy.instances: |
+          [
+            {
+              "openmetrics_endpoint": "http://%%host%%:15020/stats/prometheus"
+            }
+          ]
+        ad.datadoghq.com/istio-proxy.logs: '[{"service": "ingress-gateway", "source": "json", "sourcecategory", "kubernetes"}]'
     spec:
       containers:
         - name: istio-proxy

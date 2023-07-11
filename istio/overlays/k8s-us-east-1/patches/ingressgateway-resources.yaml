@@ -15,7 +15,7 @@ spec:
               "openmetrics_endpoint": "http://%%host%%:15020/stats/prometheus"
             }
           ]
-        ad.datadoghq.com/istio-proxy.logs: '[{"service": "ingress-gateway", "source": "json", "sourcecategory", "kubernetes"}]'
+        ad.datadoghq.com/istio-proxy.logs: '[{"source": "json", "service": "istio-ingressgateway"}]'
     spec:
       containers:
         - name: istio-proxy
